@@ -1,0 +1,126 @@
+:root{ 
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+* , h1 , h3 , p{ 
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--Very-Light-Gray);
+}
+p{ 
+    color: var(--Grayish-blue);
+}
+
+.container{ 
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    justify-items: center;
+}
+
+.section-header{ 
+    text-align: center;
+    margin: 5rem auto 0 auto;
+    max-width: 100%;
+}
+
+.section-header h1{ 
+    font-size: clamp(1.5rem , 1rem + 3vw , 2.5rem);
+    color:var(--Very-Dark-Blue) ;
+}
+
+.section-header .light{ 
+    font-weight: lighter;
+}
+
+.section-header p { 
+    line-height: 1.9;
+    margin: 2rem auto 0 auto;
+    font-size: 0.9em;
+    max-width: 70%;
+    font-weight: 400;
+}
+
+.cyan{ 
+    color: hsl(180, 62%, 55%);
+}
+
+.red{ 
+    color: hsl(0, 78%, 62%);
+}
+
+.blue{ 
+    color: hsl(212, 86%, 64%);
+}
+
+.orange{ 
+    color: hsl(34, 97%, 64%);
+}
+
+.card{ 
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{ 
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 98%;
+    background-color: currentColor;
+}
+
+.card h3 { 
+    color: var(--Very-Dark-Blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.card p { 
+    font-size: 0.75em;
+    padding-bottom: 2.5rem;
+}
+
+.card img { 
+    align-self: flex-end;
+}
+
+.cards{ 
+    margin: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    align-items: center;
+    grid-gap: 1.5rem;
+}
+.vertical-cards .card:first-child{ 
+    margin-bottom: 1rem;
+}
+@media(max-width:800px){ 
+    .cards{ 
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px){ 
+    .section-header { 
+        text-align: left;
+    }
+    .section-header p { 
+        max-width: 100%;
+    }
+}
